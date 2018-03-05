@@ -150,6 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Tenant\Providers\TenantServiceProvider::class,
 
         /*
          * Application Service Providers...

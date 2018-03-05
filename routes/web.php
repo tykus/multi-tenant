@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('{company}/', 'Tenant\DashboardController');
+Route::group(['middleware' => 'tenant'], function () {
+    Route::get('{company}/', 'Tenant\DashboardController');
+});
