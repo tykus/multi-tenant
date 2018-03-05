@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Tenant;
 
-use App\Company;
+use App\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
-    public function __invoke(Company $company)
+    public function __invoke()
     {
-        $projects = $company->projects;
+        $projects = Project::all();
         return view('tenant.dashboard', compact('projects'));
     }
 }
