@@ -8,8 +8,18 @@ use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
-    public function index()
+    /**
+     * Store a new Project resource
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function store(Request $request)
     {
-        return Project::all();
+        Project::create([
+            'name' => $request->name
+        ]);
+
+        return back();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Tenant\Providers;
 
 use App\Tenant\Manager;
 use Illuminate\Support\ServiceProvider;
+use App\Tenant\Observers\TenantObserver;
 
 class TenantServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,10 @@ class TenantServiceProvider extends ServiceProvider
     {
         $this->app->singleton(Manager::class, function () {
             return new Manager();
+        });
+
+        $this->app->singleton(TenantObserver::class, function () {
+            return new TenantObserver(app(Manager::class)->getTenant());
         });
     }
 

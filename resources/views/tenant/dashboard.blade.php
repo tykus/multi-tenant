@@ -14,6 +14,13 @@
                         @endforeach
                     </ul>
                 </div>
+
+                <div class="card mt-5">
+                    <div class="card-header">New Project</div>
+                    <div class="card-body">
+                        @include('tenant.projects.partials.create')
+                    </div>
+                </div>
             </div>
         </div>
     </div>
