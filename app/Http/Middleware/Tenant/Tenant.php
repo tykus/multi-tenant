@@ -33,11 +33,11 @@ class Tenant
     protected function registerTenant($tenant)
     {
         app(Manager::class)->setTenant($tenant);
-        session()->put('tenant', $tenant);
+        session()->put('tenant', $tenant->id);
         
     }
 
-    public function resolveTenant($id)
+    protected function resolveTenant($id)
     {
         return Company::find($id);
     }
