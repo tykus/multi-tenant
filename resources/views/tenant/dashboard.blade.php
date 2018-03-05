@@ -10,6 +10,11 @@
                         @foreach($projects as $project)
                             <li class="list-group-item">    
                                 {{ $project->name }}
+                                <form method="post" action="{{ route('projects.delete', $project) }}" class="form-inline pull-right">
+                                    {{ csrf_field() }}
+                                    {{ method_field('delete') }}
+                                    <button class="btn btn-outline-danger pull-right">&times;</button>
+                                </form>
                             </li>
                         @endforeach
                     </ul>

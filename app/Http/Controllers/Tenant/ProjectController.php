@@ -22,4 +22,17 @@ class ProjectController extends Controller
 
         return back();
     }
+
+    /**
+     * Delete a Project resource
+     *
+     * @param integer $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        Project::findOrFail($id)->delete();
+
+        return back();
+    }
 }
