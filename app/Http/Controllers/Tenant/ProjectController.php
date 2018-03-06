@@ -24,6 +24,17 @@ class ProjectController extends Controller
     }
 
     /**
+     * Display a Project resource
+     *
+     * @param Project $project
+     * @return \Illuminate\View\View
+     */
+    public function show(Project $project)
+    {
+        return view('tenant.projects.show', compact('project'));
+    }
+
+    /**
      * Delete a Project resource
      *
      * @param integer $id

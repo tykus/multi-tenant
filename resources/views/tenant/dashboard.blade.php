@@ -9,7 +9,7 @@
                     <ul class="list-group list-group-flush">
                         @foreach($projects as $project)
                             <li class="list-group-item">    
-                                {{ $project->name }}
+                                <a href="{{ route('projects.show', $project) }}">{{ $project->name }}</a>
                                 <form method="post" action="{{ route('projects.delete', $project) }}" class="form-inline pull-right">
                                     {{ csrf_field() }}
                                     {{ method_field('delete') }}
