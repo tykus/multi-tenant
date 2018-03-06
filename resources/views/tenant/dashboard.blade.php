@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">x Dashboard</div>
+                    <div class="card-header">{{ config('app.name') }} Dashboard</div>
                     <ul class="list-group list-group-flush">
                         @foreach($projects as $project)
                             <li class="list-group-item">    
