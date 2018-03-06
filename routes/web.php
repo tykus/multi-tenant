@@ -18,9 +18,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => 'tenant'], function () {
-    Route::post('projects', 'Tenant\ProjectController@store')->name('projects.store');
-    Route::delete('projects/{id}', 'Tenant\ProjectController@destroy')->name('projects.delete');
-    Route::get('{company}', 'Tenant\DashboardController');
-});
